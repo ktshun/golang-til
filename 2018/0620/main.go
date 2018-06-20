@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"bufio"
 	"fmt"
+	"os"
 )
 
 func main() {
@@ -12,8 +12,8 @@ func main() {
 
 	if len(os.Args) < 2 {
 		fp = os.Stdin
-	}else{
-		fp,err = os.Open(os.Args[1])
+	} else {
+		fp, err = os.Open(os.Args[1])
 		if err != nil {
 			// panicってなんぞ。exception的な?
 			panic(err)
