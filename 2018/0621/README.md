@@ -101,6 +101,25 @@ https://hori-ryota.com/blog/golang-channel-pattern/
 
 はかなり参考になる。
 
+
+### PR
+とりあえず、GoRoutineの中でファイルを読んで、channelに詰めてみる。  
+https://github.com/ktshun/golang-til/pull/3
+
+とはいえ、これでは意味がないので、channelを通じて受け取ったものをさらに別のGoRoutineに処理させてみる。  
+こちらの終了街はsync.waitで。
+https://github.com/ktshun/golang-til/pull/4
+
+
+
+### ポインタと値
+`var hoge string`みたいに書くと値として扱われて`hoge := new(stirng)`みたいに書くとポインタとして扱われる？らしい。
+
+waitGroupを値で渡してデッドロックがかかった。あるある？らしい。
+
+* https://qiita.com/yuya_takeyama/items/975014950d91a4c84a5f
+
+
 ##### 参考
 * https://go-tour-jp.appspot.com/concurrency/1
 * https://qiita.com/suin/items/82ecb6f63ff4104d4f5d
